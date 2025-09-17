@@ -1,0 +1,32 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar colors */
+.navbar-custom {
+  background-color: #006400; /* Dark green */
+}
+.navbar-custom .nav-link {
+  color: #ffffff !important;
+}
+.navbar-custom .nav-link:hover {
+  color: #FFD700 !important; /* Gold hover */
+}
+.navbar-custom .nav-link.active {
+  color: #FFD700 !important; /* Active link gold */
+}
+.navbar-custom .navbar-brand {
+  color: #FFD700 !important;
+  font-weight: bold;
+}
+
+/* Profile image */
+img {
+  max-width: 200px;
+}
+
+/* Footer */
+footer {
+  background-color: #006400;
+  color: white;
+}
