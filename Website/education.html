@@ -3,51 +3,453 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Education | Getnet Tigabie Askale</title>
+  <title>Education | Getnet Tigabie Askale - Academic Qualifications</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cambria:wght@400;600;700&family=Segoe+UI:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+      --light-bg: #f8f9fa;
+      --dark-text: #2c3e50;
+      --light-text: #7f8c8d;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.7;
+      color: var(--dark-text);
+      background-color: var(--light-bg);
+    }
+    
+    .navbar-custom {
+      background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      padding: 15px 0;
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: white !important;
+    }
+    
+    .nav-link {
+      color: rgba(255,255,255,0.9) !important;
+      font-weight: 500;
+      margin: 0 8px;
+      padding: 8px 16px !important;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover, .nav-link.active {
+      background-color: rgba(255,255,255,0.15);
+      color: white !important;
+      transform: translateY(-2px);
+    }
+    
+    .welcome-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 60px 0 40px 0;
+      margin-bottom: 40px;
+      border-radius: 0 0 20px 20px;
+    }
+    
+    .content-card {
+      background: white;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: none;
+      margin-bottom: 30px;
+    }
+    
+    .section-title {
+      font-family: 'Cambria', serif;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 30px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+      border-radius: 2px;
+    }
+    
+    .education-timeline {
+      position: relative;
+      padding-left: 30px;
+      margin: 40px 0;
+    }
+    
+    .education-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color));
+      border-radius: 2px;
+    }
+    
+    .education-item {
+      position: relative;
+      margin-bottom: 40px;
+      padding: 25px;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 12px;
+      border-left: 4px solid var(--secondary-color);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .education-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    .education-item::before {
+      content: '';
+      position: absolute;
+      left: -37px;
+      top: 40px;
+      width: 16px;
+      height: 16px;
+      background: var(--accent-color);
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: 0 0 0 3px var(--secondary-color);
+    }
+    
+    .education-degree {
+      font-family: 'Cambria', serif;
+      font-weight: 700;
+      color: var(--primary-color);
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+    
+    .education-institution {
+      color: var(--secondary-color);
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+    
+    .education-period {
+      color: var(--light-text);
+      font-weight: 500;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .education-period i {
+      margin-right: 8px;
+      color: var(--accent-color);
+    }
+    
+    .education-description {
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+    
+    .certification-badge {
+      display: inline-flex;
+      align-items: center;
+      background: var(--secondary-color);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-top: 10px;
+    }
+    
+    .certification-badge i {
+      margin-right: 8px;
+    }
+    
+    .skills-section {
+      margin-top: 40px;
+    }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .skill-category {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      border-top: 4px solid var(--secondary-color);
+    }
+    
+    .skill-category h5 {
+      color: var(--primary-color);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .skill-category h5 i {
+      margin-right: 10px;
+      color: var(--secondary-color);
+    }
+    
+    .skill-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .skill-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+    }
+    
+    .skill-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .skill-list li i {
+      color: var(--secondary-color);
+      margin-right: 10px;
+      font-size: 0.9rem;
+    }
+    
+    footer {
+      background: var(--primary-color);
+      color: white;
+      padding: 25px 0;
+      margin-top: 50px;
+    }
+    
+    @media (max-width: 768px) {
+      .content-card {
+        padding: 25px;
+      }
+      
+      .education-item {
+        padding: 20px;
+      }
+      
+      .education-timeline {
+        padding-left: 20px;
+      }
+      
+      .education-item::before {
+        left: -27px;
+      }
+      
+      .welcome-section {
+        padding: 40px 0 30px 0;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-custom">
+  <!-- Header/Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#"></a>
+      <a class="navbar-brand" href="../index.html">
+        <i class="fas fa-laptop-code me-2"></i>Getnet Tigabie
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
-          <li class="nav-item"><a class="nav-link active" href="education.html">Education</a></li>
-          <li class="nav-item"><a class="nav-link" href="teaching.html">Teaching Courses</a></li>
-          <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="publication.html">Publications</a></li>
-           <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html"><i class="fas fa-home me-1"></i>Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-user me-1"></i>About Me</a></li>
+          <li class="nav-item"><a class="nav-link active" href="education.html"><i class="fas fa-graduation-cap me-1"></i>Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="teaching.html"><i class="fas fa-chalkboard-teacher me-1"></i>Teaching</a></li>
+          <li class="nav-item"><a class="nav-link" href="experience.html"><i class="fas fa-briefcase me-1"></i>Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="publication.html"><i class="fas fa-book me-1"></i>Publications</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html"><i class="fas fa-project-diagram me-1"></i>Projects</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Content -->
-  <div class="cv-details" style="font-family: Cambria, serif; text-align: justify; font-size: 17px;">
-    
-   <h3>Education & Training</h3>
-  <ul>
-    <li><strong>MSc in Computer Science</strong> – University of Gondar (2019–2022)</li>
-    <li><strong>BSc in Computer Science</strong> – Bahir Dar University (2015–2018)</li>
-    <li><strong>Higher Diploma Programme Certificate in Teaching Methods</strong> – University of Gondar (2022–2023)</li>
-    <li><strong>Master Class for Teaching Online</strong> – Open edX</li>
-  </ul>
+  <!-- Welcome Section -->
+  <div class="welcome-section mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 style="font-family: 'Cambria', serif; font-weight: 700;">Education & Qualifications</h1>
+          <p class="lead">Academic Journey & Professional Development</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container mt-4">
+    <div class="content-card">
+      <h2 class="section-title">Academic Qualifications</h2>
+      
+      <div class="education-timeline">
+        <!-- MSc -->
+        <div class="education-item">
+          <div class="education-degree">Master of Science in Computer Science</div>
+          <div class="education-institution">University of Gondar</div>
+          <div class="education-period">
+            <i class="fas fa-calendar-alt"></i>2019 – 2022
+          </div>
+          <div class="education-description">
+            <p>Specialized in Artificial Intelligence, Machine Learning, and Computer Vision with research focusing on practical applications in agriculture and healthcare. Thesis work involved developing deep learning models for plant disease detection and classification.</p>
+            <div class="certification-badge">
+              <i class="fas fa-award"></i>Postgraduate Degree
+            </div>
+          </div>
+        </div>
+        
+        <!-- BSc -->
+        <div class="education-item">
+          <div class="education-degree">Bachelor of Science in Computer Science</div>
+          <div class="education-institution">Bahir Dar University</div>
+          <div class="education-period">
+            <i class="fas fa-calendar-alt"></i>2015 – 2018
+          </div>
+          <div class="education-description">
+            <p>Comprehensive foundation in computer science fundamentals including programming, algorithms, data structures, software engineering, and database systems. Laid the groundwork for advanced studies and professional career in computing.</p>
+            <div class="certification-badge">
+              <i class="fas fa-award"></i>Undergraduate Degree
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="section-title">Professional Certifications & Training</h2>
+      
+      <div class="education-timeline">
+        <!-- HDP Certificate -->
+        <div class="education-item">
+          <div class="education-degree">Higher Diploma Programme Certificate in Teaching Methods</div>
+          <div class="education-institution">University of Gondar</div>
+          <div class="education-period">
+            <i class="fas fa-calendar-alt"></i>2022 – 2023
+          </div>
+          <div class="education-description">
+            <p>Advanced pedagogical training focusing on modern teaching methodologies, curriculum development, and student assessment techniques. Enhanced ability to create engaging learning environments and effective instructional strategies.</p>
+            <div class="certification-badge">
+              <i class="fas fa-certificate"></i>Teaching Certification
+            </div>
+          </div>
+        </div>
+        
+        <!-- Open edX -->
+        <div class="education-item">
+          <div class="education-degree">Master Class for Teaching Online</div>
+          <div class="education-institution">Open edX Platform</div>
+          <div class="education-period">
+            <i class="fas fa-calendar-alt"></i>Completed
+          </div>
+          <div class="education-description">
+            <p>Comprehensive training in digital education delivery, online course design, and virtual classroom management. Developed expertise in leveraging educational technology for effective remote teaching and learning experiences.</p>
+            <div class="certification-badge">
+              <i class="fas fa-laptop"></i>Digital Teaching Certification
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-section">
+        <h2 class="section-title">Academic Competencies</h2>
+        
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h5><i class="fas fa-graduation-cap"></i>Research Expertise</h5>
+            <ul class="skill-list">
+              <li><i class="fas fa-check"></i>Artificial Intelligence</li>
+              <li><i class="fas fa-check"></i>Machine Learning</li>
+              <li><i class="fas fa-check"></i>Computer Vision</li>
+              <li><i class="fas fa-check"></i>Deep Learning</li>
+              <li><i class="fas fa-check"></i>Image Processing</li>
+            </ul>
+          </div>
+          
+          <div class="skill-category">
+            <h5><i class="fas fa-chalkboard-teacher"></i>Teaching Skills</h5>
+            <ul class="skill-list">
+              <li><i class="fas fa-check"></i>Curriculum Development</li>
+              <li><i class="fas fa-check"></i>Student Mentorship</li>
+              <li><i class="fas fa-check"></i>Online Education</li>
+              <li><i class="fas fa-check"></i>Research Supervision</li>
+              <li><i class="fas fa-check"></i>Academic Assessment</li>
+            </ul>
+          </div>
+          
+          <div class="skill-category">
+            <h5><i class="fas fa-cogs"></i>Technical Proficiencies</h5>
+            <ul class="skill-list">
+              <li><i class="fas fa-check"></i>Python Programming</li>
+              <li><i class="fas fa-check"></i>Deep Learning Frameworks</li>
+              <li><i class="fas fa-check"></i>Research Methodology</li>
+              <li><i class="fas fa-check"></i>Academic Writing</li>
+              <li><i class="fas fa-check"></i>Data Analysis</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Footer -->
-  <footer class="text-center py-3 mt-5">
-    <p>&copy; <span id="year"></span> Getnet Tigabie Askale</p>
+  <footer class="text-center py-4">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Getnet Tigabie Askale. All rights reserved.</p>
+      <p class="mb-0" style="color: rgba(255,255,255,0.8);">Computer Science Lecturer | University of Gondar</p>
+    </div>
   </footer>
 
-  <script src="assets/js/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Add animation to education items on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateX(0)';
+        }
+      });
+    }, observerOptions);
+    
+    // Observe education items
+    document.querySelectorAll('.education-item').forEach(item => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateX(-20px)';
+      item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(item);
+    });
+  </script>
 </body>
 </html>
-
