@@ -3,78 +3,330 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Getnet Tigabie Askale</title>
+  <title>Home | Getnet Tigabie Askale - Computer Science Lecturer & Researcher</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cambria:wght@400;600;700&family=Segoe+UI:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="Website/assets/css/style.css">
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+      --light-bg: #f8f9fa;
+      --dark-text: #2c3e50;
+      --light-text: #7f8c8d;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.7;
+      color: var(--dark-text);
+      background-color: var(--light-bg);
+    }
+    
+    .navbar-custom {
+      background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      padding: 15px 0;
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: white !important;
+    }
+    
+    .nav-link {
+      color: rgba(255,255,255,0.9) !important;
+      font-weight: 500;
+      margin: 0 8px;
+      padding: 8px 16px !important;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover, .nav-link.active {
+      background-color: rgba(255,255,255,0.15);
+      color: white !important;
+      transform: translateY(-2px);
+    }
+    
+    .profile-img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border: 5px solid white;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+    
+    .profile-img:hover {
+      transform: scale(1.03);
+    }
+    
+    .welcome-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 40px 0;
+      margin-bottom: 40px;
+      border-radius: 0 0 20px 20px;
+    }
+    
+    .content-card {
+      background: white;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: none;
+      margin-bottom: 30px;
+    }
+    
+    .section-title {
+      font-family: 'Cambria', serif;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 25px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+      border-radius: 2px;
+    }
+    
+    .highlight-text {
+      font-family: 'Cambria', serif;
+      font-size: 1.1rem;
+      text-align: justify;
+      color: #555;
+    }
+    
+    .social-links {
+      background: var(--light-bg);
+      padding: 25px;
+      border-radius: 12px;
+      border-left: 5px solid var(--secondary-color);
+    }
+    
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 20px;
+      margin: 8px;
+      background: white;
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--dark-text);
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+    
+    .social-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      color: var(--secondary-color);
+      text-decoration: none;
+    }
+    
+    .social-icon {
+      margin-right: 10px;
+      font-size: 1.2rem;
+      color: var(--secondary-color);
+    }
+    
+    .research-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+    
+    .research-item {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 4px solid var(--secondary-color);
+    }
+    
+    .research-item h5 {
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+    
+    footer {
+      background: var(--primary-color);
+      color: white;
+      padding: 25px 0;
+      margin-top: 50px;
+    }
+    
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    
+    .skill-tag {
+      background: var(--secondary-color);
+      color: white;
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    
+    @media (max-width: 768px) {
+      .content-card {
+        padding: 25px;
+      }
+      
+      .profile-img {
+        width: 180px;
+        height: 180px;
+        margin-bottom: 20px;
+      }
+      
+      .research-highlights {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Header/Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-custom">
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="index.html"></a>
+      <a class="navbar-brand" href="index.html">
+        <i class="fas fa-laptop-code me-2"></i>Getnet Tigabie
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="Website/about.html">About Me</a></li>
-          <li class="nav-item"><a class="nav-link" href="Website/education.html">Education</a></li>
-          <li class="nav-item"><a class="nav-link" href="Website/teaching.html">Teaching Courses</a></li>
-          <li class="nav-item"><a class="nav-link" href="Website/experience.html">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="Website/publication.html">Publications</a></li>
-           <li class="nav-item"><a class="nav-link" href="Website/projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link active" href="index.html"><i class="fas fa-home me-1"></i>Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="Website/about.html"><i class="fas fa-user me-1"></i>About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="Website/education.html"><i class="fas fa-graduation-cap me-1"></i>Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="Website/teaching.html"><i class="fas fa-chalkboard-teacher me-1"></i>Teaching</a></li>
+          <li class="nav-item"><a class="nav-link" href="Website/experience.html"><i class="fas fa-briefcase me-1"></i>Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="Website/publication.html"><i class="fas fa-book me-1"></i>Publications</a></li>
+          <li class="nav-item"><a class="nav-link" href="Website/projects.html"><i class="fas fa-project-diagram me-1"></i>Projects</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Page Content -->
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-3 text-center">
-        <img src="Website/assets/images/gech.jpg" alt="My Photo" class="img-fluid rounded-circle mb-3">
+  <!-- Welcome Section -->
+  <div class="welcome-section mt-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <h1 style="font-family: 'Cambria', serif; font-weight: 700;">Welcome to My Professional Portfolio</h1>
+          <p class="lead">Computer Science Lecturer | AI Researcher | Software Developer</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <img src="Website/assets/images/gech.jpg" alt="Getnet Tigabie Askale" class="profile-img rounded-circle">
+        </div>
       </div>
-      <div class="col-md-9">
-        <h1 style="text-align: justify; font-family: Cambria, serif;">Dear Reader ... </h1>
-        <p style="text-align: justify; font-family: Cambria, serif;">
-          I am <strong>Getnet Tigabie Askale</strong>, a Computer Science Lecturer at the University of Gondar, Ethiopia, where I have been serving since 2022. I hold both BSc and MSc degrees in Computer Science, and my academic career is driven by a strong commitment to teaching, research, and the application of computing to real-world challenges. Over the years, I have built a professional profile that combines excellence in education, innovative research, and practical software development skills.
+    </div>
+  </div>
 
-In my teaching role, I deliver undergraduate courses in computer science and related fields while supervising student research and senior projects. I also contribute to curriculum design and program accreditation processes, ensuring that academic standards align with both national and global expectations. I believe in creating an engaging and supportive learning environment that encourages students to become independent thinkers and problem solvers.
+  <!-- Main Content -->
+  <div class="container mt-4">
+    <div class="content-card">
+      <h2 class="section-title">Professional Overview</h2>
+      <div class="highlight-text">
+        <p>I am <strong class="text-primary">Getnet Tigabie Askale</strong>, a dedicated Computer Science Lecturer at the University of Gondar, Ethiopia, with a passion for teaching, research, and applying computing solutions to real-world challenges.</p>
 
-My research focuses on Artificial Intelligence, Machine Learning, Computer Vision, Image Processing, and Natural Language Processing. I am particularly passionate about developing AI-powered systems that address pressing challenges in agriculture, health, and education. For example, my work on plant disease detection using deep learning has practical applications in improving crop productivity and food security, while my studies in skin disease classification and medical image analysis contribute to advancements in healthcare technologies.
+        <p>With both BSc and MSc degrees in Computer Science, I have built a comprehensive professional profile that bridges academic excellence with practical software development expertise. My career is driven by a commitment to advancing technology education and research in Ethiopia and beyond.</p>
+      </div>
 
-I have published several works in reputable journals and conferences, including studies on maize disease detection, multi-class plant disease recognition, and skin disease classification using deep learning approaches. These publications reflect not only my research expertise but also my commitment to solving problems that have direct social and economic impacts. By blending theoretical knowledge with practical applications, my research aims to produce results that can be implemented in real-world contexts.
+      <div class="research-highlights">
+        <div class="research-item">
+          <h5><i class="fas fa-chalkboard-teacher text-primary me-2"></i>Teaching Excellence</h5>
+          <p>Delivering undergraduate courses, supervising research, and contributing to curriculum development with a focus on creating engaging learning environments.</p>
+        </div>
+        <div class="research-item">
+          <h5><i class="fas fa-brain text-primary me-2"></i>AI Research</h5>
+          <p>Specializing in Computer Vision, Machine Learning, and NLP with applications in agriculture, healthcare, and education.</p>
+        </div>
+        <div class="research-item">
+          <h5><i class="fas fa-code text-primary me-2"></i>Software Development</h5>
+          <p>Full-stack development expertise using modern technologies to translate research into practical solutions.</p>
+        </div>
+      </div>
 
-In addition to my research, I bring strong software engineering and web development skills to both academic and professional projects. I have hands-on experience in building software systems and interactive applications using HTML, CSS, JavaScript, Bootstrap, AJAX, and other modern technologies. These skills complement my research by allowing me to translate theoretical findings into deployable solutions.
+      <h4 class="mt-4" style="color: var(--primary-color);">Research Focus Areas</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Artificial Intelligence</span>
+        <span class="skill-tag">Machine Learning</span>
+        <span class="skill-tag">Computer Vision</span>
+        <span class="skill-tag">Image Processing</span>
+        <span class="skill-tag">Natural Language Processing</span>
+        <span class="skill-tag">Deep Learning</span>
+        <span class="skill-tag">Precision Agriculture</span>
+        <span class="skill-tag">Healthcare Technology</span>
+      </div>
 
-Beyond teaching and research, I actively engage in academic services, such as supervising final-year projects, reviewing scholarly works, and contributing to departmental development initiatives. I hold the Higher Diploma Programme (HDP) Certificate in Teaching Methods from the University of Gondar and completed the Master Class for Teaching Online (Open edX), which has strengthened my ability to deliver high-quality instruction in both traditional and digital environments.
+      <div class="highlight-text mt-4">
+        <p>My research has practical applications in critical areas such as plant disease detection for improved food security and medical image analysis for enhanced healthcare diagnostics. I have published multiple works in reputable journals and conferences, focusing on solutions that address real-world challenges in developing contexts.</p>
 
-Ultimately, my vision is to continue advancing in the fields of Artificial Intelligence and Computer Science research, while mentoring students to become innovators and leaders in technology. I am driven by the belief that computing has the power to transform societies, and I am dedicated to contributing to both the academic community and the broader technological development of Ethiopia and beyond.  
-        </p>
-        <p style="text-align: justify; font-family: Cambria, serif;"> Google Scholar Address <a href ="https://scholar.google.com/citations?user=rR5vQ7AAAAAJ&hl=en" target="_blank"> clickhere</a></p>
-         <p style="text-align: justify; font-family: Cambria, serif;"> Orcid Address <a href ="https://orcid.org/0009-0001-2762-3422" target="_blank"> clickhere</a></p>
-        <p style="text-align: justify; font-family: Cambria, serif;"> linkedin Address <a href ="https://www.linkedin.com/in/getnet-tigabie-askale-988081155" target="_blank"> clickhere</a></p>
-        <p style="text-align: justify; font-family: Cambria, serif;"> SlideShare Address <a href ="https://www.slideshare.net/GetnetTigabie" target="_blank"> clickhere</a></p>
+        <p>Beyond academia, I actively contribute to departmental development, student mentorship, and technological advancement initiatives. My vision is to continue pushing the boundaries of AI research while nurturing the next generation of African technology innovators.</p>
+      </div>
+    </div>
+
+    <!-- Social Links -->
+    <div class="social-links">
+      <h4 class="section-title">Connect With Me</h4>
+      <div class="text-center">
+        <a href="https://scholar.google.com/citations?user=rR5vQ7AAAAAJ&hl=en" target="_blank" class="social-link">
+          <i class="fas fa-graduation-cap social-icon"></i> Google Scholar
+        </a>
+        <a href="https://orcid.org/0009-0001-2762-3422" target="_blank" class="social-link">
+          <i class="fab fa-orcid social-icon"></i> ORCID
+        </a>
+        <a href="https://www.linkedin.com/in/getnet-tigabie-askale-988081155" target="_blank" class="social-link">
+          <i class="fab fa-linkedin social-icon"></i> LinkedIn
+        </a>
+        <a href="https://www.slideshare.net/GetnetTigabie" target="_blank" class="social-link">
+          <i class="fas fa-presentation social-icon"></i> SlideShare
+        </a>
       </div>
     </div>
   </div>
 
   <!-- Footer -->
-  <footer class="text-center py-3 mt-5">
-    <p>&copy; <span id="year"></span> Getnet Tigabie Askale</p>
+  <footer class="text-center py-4">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Getnet Tigabie Askale. All rights reserved.</p>
+      <p class="mb-0" style="color: rgba(255,255,255,0.8);">Computer Science Lecturer | University of Gondar</p>
+    </div>
   </footer>
 
-  <script src="assets/js/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Add smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
