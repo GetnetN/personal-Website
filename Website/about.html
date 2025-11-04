@@ -3,59 +3,423 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me | Getnet Tigabie Askale</title>
+  <title>About Me | Getnet Tigabie Askale - Computer Science Lecturer & Researcher</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cambria:wght@400;600;700&family=Segoe+UI:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+      --light-bg: #f8f9fa;
+      --dark-text: #2c3e50;
+      --light-text: #7f8c8d;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.7;
+      color: var(--dark-text);
+      background-color: var(--light-bg);
+    }
+    
+    .navbar-custom {
+      background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      padding: 15px 0;
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: white !important;
+    }
+    
+    .nav-link {
+      color: rgba(255,255,255,0.9) !important;
+      font-weight: 500;
+      margin: 0 8px;
+      padding: 8px 16px !important;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover, .nav-link.active {
+      background-color: rgba(255,255,255,0.15);
+      color: white !important;
+      transform: translateY(-2px);
+    }
+    
+    .welcome-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 60px 0 40px 0;
+      margin-bottom: 40px;
+      border-radius: 0 0 20px 20px;
+    }
+    
+    .content-card {
+      background: white;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: none;
+      margin-bottom: 30px;
+    }
+    
+    .section-title {
+      font-family: 'Cambria', serif;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 25px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+      border-radius: 2px;
+    }
+    
+    .highlight-text {
+      font-family: 'Cambria', serif;
+      font-size: 1.1rem;
+      text-align: justify;
+      color: #555;
+      margin-bottom: 25px;
+    }
+    
+    .profile-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin: 30px 0;
+    }
+    
+    .highlight-card {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 25px;
+      border-radius: 12px;
+      border-left: 4px solid var(--secondary-color);
+      transition: transform 0.3s ease;
+    }
+    
+    .highlight-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .highlight-card h5 {
+      color: var(--primary-color);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .highlight-card h5 i {
+      margin-right: 10px;
+      color: var(--secondary-color);
+    }
+    
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    
+    .skill-tag {
+      background: var(--secondary-color);
+      color: white;
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+      margin: 30px 0;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--secondary-color);
+      border-radius: 2px;
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 25px;
+      padding-left: 20px;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -30px;
+      top: 8px;
+      width: 12px;
+      height: 12px;
+      background: var(--accent-color);
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 0 0 3px var(--secondary-color);
+    }
+    
+    .timeline-date {
+      font-weight: 600;
+      color: var(--secondary-color);
+      margin-bottom: 5px;
+    }
+    
+    footer {
+      background: var(--primary-color);
+      color: white;
+      padding: 25px 0;
+      margin-top: 50px;
+    }
+    
+    @media (max-width: 768px) {
+      .content-card {
+        padding: 25px;
+      }
+      
+      .profile-highlights {
+        grid-template-columns: 1fr;
+      }
+      
+      .welcome-section {
+        padding: 40px 0 30px 0;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Header/Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-custom">
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#"></a>
+      <a class="navbar-brand" href="../index.html">
+        <i class="fas fa-laptop-code me-2"></i>Getnet Tigabie
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="about.html">About Me</a></li>
-          <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
-          <li class="nav-item"><a class="nav-link" href="teaching.html">Teaching Courses</a></li>
-          <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="publication.html">Publications</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html"><i class="fas fa-home me-1"></i>Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html"><i class="fas fa-user me-1"></i>About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="education.html"><i class="fas fa-graduation-cap me-1"></i>Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="teaching.html"><i class="fas fa-chalkboard-teacher me-1"></i>Teaching</a></li>
+          <li class="nav-item"><a class="nav-link" href="experience.html"><i class="fas fa-briefcase me-1"></i>Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="publication.html"><i class="fas fa-book me-1"></i>Publications</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html"><i class="fas fa-project-diagram me-1"></i>Projects</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Page Content -->
-  <div class="container mt-5">
-    <h2>About Me</h2>
-    <p style="text-align: justify; font-family: Cambria, serif;">
-          I am <strong>Getnet Tigabie Askale</strong>, a Computer Science Lecturer at the University of Gondar, Ethiopia, where I have been serving since 2022. I hold both BSc and MSc degrees in Computer Science, and my academic career is driven by a strong commitment to teaching, research, and the application of computing to real-world challenges. Over the years, I have built a professional profile that combines excellence in education, innovative research, and practical software development skills.
+  <!-- Welcome Section -->
+  <div class="welcome-section mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 style="font-family: 'Cambria', serif; font-weight: 700;">About Me</h1>
+          <p class="lead">Computer Science Lecturer | AI Researcher | Technology Innovator</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-In my teaching role, I deliver undergraduate courses in computer science and related fields while supervising student research and senior projects. I also contribute to curriculum design and program accreditation processes, ensuring that academic standards align with both national and global expectations. I believe in creating an engaging and supportive learning environment that encourages students to become independent thinkers and problem solvers.
+  <!-- Main Content -->
+  <div class="container mt-4">
+    <div class="content-card">
+      <h2 class="section-title">Professional Journey</h2>
+      
+      <div class="highlight-text">
+        <p>I am <strong class="text-primary">Getnet Tigabie Askale</strong>, a dedicated Computer Science Lecturer at the University of Gondar, Ethiopia, where I have been serving since 2022. My academic career is driven by a strong commitment to teaching excellence, innovative research, and the practical application of computing technologies to address real-world challenges.</p>
+      </div>
 
-My research focuses on Artificial Intelligence, Machine Learning, Computer Vision, Image Processing, and Natural Language Processing. I am particularly passionate about developing AI-powered systems that address pressing challenges in agriculture, health, and education. For example, my work on plant disease detection using deep learning has practical applications in improving crop productivity and food security, while my studies in skin disease classification and medical image analysis contribute to advancements in healthcare technologies.
+      <div class="profile-highlights">
+        <div class="highlight-card">
+          <h5><i class="fas fa-chalkboard-teacher"></i>Teaching Philosophy</h5>
+          <p>I believe in creating engaging, supportive learning environments that foster independent thinking and problem-solving skills. My approach combines theoretical foundations with practical applications to prepare students for real-world challenges.</p>
+        </div>
+        
+        <div class="highlight-card">
+          <h5><i class="fas fa-bullseye"></i>Career Vision</h5>
+          <p>To advance AI research while mentoring the next generation of African technology innovators, contributing to both academic excellence and the technological development of Ethiopia and beyond.</p>
+        </div>
+        
+        <div class="highlight-card">
+          <h5><i class="fas fa-hands-helping"></i>Academic Service</h5>
+          <p>Active engagement in curriculum development, student mentorship, departmental initiatives, and scholarly review processes to strengthen academic institutions and support student success.</p>
+        </div>
+      </div>
 
-I have published several works in reputable journals and conferences, including studies on maize disease detection, multi-class plant disease recognition, and skin disease classification using deep learning approaches. These publications reflect not only my research expertise but also my commitment to solving problems that have direct social and economic impacts. By blending theoretical knowledge with practical applications, my research aims to produce results that can be implemented in real-world contexts.
+      <h3 class="section-title">Professional Timeline</h3>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2022 - Present</div>
+          <h5>Computer Science Lecturer</h5>
+          <p>University of Gondar - Teaching undergraduate courses, supervising research projects, and contributing to curriculum development.</p>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">2022</div>
+          <h5>MSc in Computer Science</h5>
+          <p>Completed Master's degree with focus on Artificial Intelligence and Machine Learning applications.</p>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">2022</div>
+          <h5>Higher Diploma Programme (HDP) Certificate</h5>
+          <p>University of Gondar - Advanced teaching methods and pedagogical training.</p>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">2022</div>
+          <h5>Master Class for Teaching Online (Open edX)</h5>
+          <p>Completed comprehensive training in digital education delivery and online teaching methodologies.</p>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">Previous</div>
+          <h5>BSc in Computer Science</h5>
+          <p>Foundation in computing principles and software development that paved the way for advanced studies and academic career.</p>
+        </div>
+      </div>
 
-In addition to my research, I bring strong software engineering and web development skills to both academic and professional projects. I have hands-on experience in building software systems and interactive applications using HTML, CSS, JavaScript, Bootstrap, AJAX, and other modern technologies. These skills complement my research by allowing me to translate theoretical findings into deployable solutions.
+      <h3 class="section-title">Research Focus & Expertise</h3>
+      
+      <div class="highlight-text">
+        <p>My research centers on cutting-edge technologies in Artificial Intelligence, with particular emphasis on developing practical solutions for agriculture, healthcare, and education sectors. I specialize in creating AI-powered systems that address pressing challenges in developing contexts.</p>
+      </div>
 
-Beyond teaching and research, I actively engage in academic services, such as supervising final-year projects, reviewing scholarly works, and contributing to departmental development initiatives. I hold the Higher Diploma Programme (HDP) Certificate in Teaching Methods from the University of Gondar and completed the Master Class for Teaching Online (Open edX), which has strengthened my ability to deliver high-quality instruction in both traditional and digital environments.
+      <h5>Core Research Areas:</h5>
+      <div class="skill-tags">
+        <span class="skill-tag">Artificial Intelligence</span>
+        <span class="skill-tag">Machine Learning</span>
+        <span class="skill-tag">Computer Vision</span>
+        <span class="skill-tag">Deep Learning</span>
+        <span class="skill-tag">Image Processing</span>
+        <span class="skill-tag">Natural Language Processing</span>
+        <span class="skill-tag">Precision Agriculture</span>
+        <span class="skill-tag">Healthcare Technology</span>
+        <span class="skill-tag">Educational Technology</span>
+      </div>
 
-Ultimately, my vision is to continue advancing in the fields of Artificial Intelligence and Computer Science research, while mentoring students to become innovators and leaders in technology. I am driven by the belief that computing has the power to transform societies, and I am dedicated to contributing to both the academic community and the broader technological development of Ethiopia and beyond.  
-        </p>
+      <div class="highlight-text mt-4">
+        <h5>Notable Research Contributions:</h5>
+        <ul>
+          <li><strong>Plant Disease Detection:</strong> Developed deep learning models for early detection of crop diseases, contributing to food security efforts</li>
+          <li><strong>Medical Image Analysis:</strong> Advanced skin disease classification systems using computer vision techniques</li>
+          <li><strong>Multi-class Recognition:</strong> Created robust systems for identifying multiple plant diseases simultaneously</li>
+          <li><strong>Practical Applications:</strong> Focused on implementing research findings in real-world agricultural and healthcare settings</li>
+        </ul>
+      </div>
+
+      <h3 class="section-title">Technical Skills & Development</h3>
+      
+      <div class="highlight-text">
+        <p>Beyond academic research, I maintain strong software engineering capabilities that enable me to translate theoretical concepts into functional applications and systems.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <h6>Web Technologies:</h6>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Bootstrap</span>
+            <span class="skill-tag">AJAX</span>
+            <span class="skill-tag">React</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h6>AI & Data Science:</h6>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">TensorFlow</span>
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">OpenCV</span>
+            <span class="skill-tag">Scikit-learn</span>
+            <span class="skill-tag">Keras</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-text mt-4">
+        <p>My combination of research expertise and practical development skills allows me to bridge the gap between academic inquiry and real-world implementation, creating solutions that are both theoretically sound and practically viable.</p>
+
+        <p>I am committed to continuing this journey of academic excellence, research innovation, and technological contribution, always with the goal of creating positive impact through computing education and research.</p>
+      </div>
+    </div>
   </div>
 
   <!-- Footer -->
-  <footer class="text-center py-3 mt-5">
-    <p>&copy; <span id="year"></span> Getnet Tigabie Askale</p>
+  <footer class="text-center py-4">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Getnet Tigabie Askale. All rights reserved.</p>
+      <p class="mb-0" style="color: rgba(255,255,255,0.8);">Computer Science Lecturer | University of Gondar</p>
+    </div>
   </footer>
 
-  <script src="assets/js/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Add smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
+    // Add animation to timeline items on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateX(0)';
+        }
+      });
+    }, observerOptions);
+    
+    // Observe timeline items
+    document.querySelectorAll('.timeline-item').forEach(item => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateX(-20px)';
+      item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(item);
+    });
+  </script>
 </body>
 </html>
-
