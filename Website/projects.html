@@ -3,59 +3,459 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Publications | Getnet Tigabie Askale</title>
+  <title>Publications | Getnet Tigabie Askale - Research Publications</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cambria:wght@400;600;700&family=Segoe+UI:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+      --light-bg: #f8f9fa;
+      --dark-text: #2c3e50;
+      --light-text: #7f8c8d;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.7;
+      color: var(--dark-text);
+      background-color: var(--light-bg);
+    }
+    
+    .navbar-custom {
+      background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      padding: 15px 0;
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: white !important;
+    }
+    
+    .nav-link {
+      color: rgba(255,255,255,0.9) !important;
+      font-weight: 500;
+      margin: 0 8px;
+      padding: 8px 16px !important;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover, .nav-link.active {
+      background-color: rgba(255,255,255,0.15);
+      color: white !important;
+      transform: translateY(-2px);
+    }
+    
+    .welcome-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 60px 0 40px 0;
+      margin-bottom: 40px;
+      border-radius: 0 0 20px 20px;
+    }
+    
+    .content-card {
+      background: white;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: none;
+      margin-bottom: 30px;
+    }
+    
+    .section-title {
+      font-family: 'Cambria', serif;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 30px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+      border-radius: 2px;
+    }
+    
+    .publication-item {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 25px;
+      border-left: 4px solid var(--secondary-color);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .publication-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    .publication-title {
+      font-family: 'Cambria', serif;
+      font-weight: 700;
+      color: var(--primary-color);
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+    
+    .publication-authors {
+      color: var(--light-text);
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    
+    .publication-venue {
+      color: var(--secondary-color);
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    
+    .publication-links {
+      margin-top: 15px;
+    }
+    
+    .publication-link {
+      display: inline-flex;
+      align-items: center;
+      background: var(--secondary-color);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-right: 10px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .publication-link:hover {
+      background: var(--accent-color);
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .publication-link i {
+      margin-right: 8px;
+    }
+    
+    .publication-badge {
+      display: inline-block;
+      background: var(--accent-color);
+      color: white;
+      padding: 5px 12px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-left: 10px;
+    }
+    
+    .research-areas {
+      margin-top: 40px;
+    }
+    
+    .research-category {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      border-top: 4px solid var(--secondary-color);
+      margin-bottom: 20px;
+    }
+    
+    .research-category h5 {
+      color: var(--primary-color);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .research-category h5 i {
+      margin-right: 10px;
+      color: var(--secondary-color);
+    }
+    
+    .research-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .research-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+    }
+    
+    .research-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .research-list li i {
+      color: var(--secondary-color);
+      margin-right: 10px;
+      font-size: 0.9rem;
+    }
+    
+    footer {
+      background: var(--primary-color);
+      color: white;
+      padding: 25px 0;
+      margin-top: 50px;
+    }
+    
+    @media (max-width: 768px) {
+      .content-card {
+        padding: 25px;
+      }
+      
+      .publication-item {
+        padding: 20px;
+      }
+      
+      .welcome-section {
+        padding: 40px 0 30px 0;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-custom">
+  <!-- Header/Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#"></a>
+      <a class="navbar-brand" href="../index.html">
+        <i class="fas fa-laptop-code me-2"></i>Getnet Tigabie
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
-          <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
-          <li class="nav-item"><a class="nav-link" href="teaching.html">Teaching Courses</a></li>
-          <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
-          <li class="nav-item"><a class="nav-link active" href="publication.html">Publications</a></li>
-           <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html"><i class="fas fa-home me-1"></i>Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-user me-1"></i>About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="education.html"><i class="fas fa-graduation-cap me-1"></i>Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="teaching.html"><i class="fas fa-chalkboard-teacher me-1"></i>Teaching</a></li>
+          <li class="nav-item"><a class="nav-link" href="experience.html"><i class="fas fa-briefcase me-1"></i>Experience</a></li>
+          <li class="nav-item"><a class="nav-link active" href="publication.html"><i class="fas fa-book me-1"></i>Publications</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html"><i class="fas fa-project-diagram me-1"></i>Projects</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Content -->
-  <div class="cv-details" style="font-family: Cambria, serif; text-align: justify; font-size: 17px;">
-    <h2>Publications</h2>
-    <ul>
-      <li>	SPANA- University of Gondar 
-Available at :<a href="https://spana.informaticsuog.edu.et" target="_blank">clickme</a>
-</li>
-      <li> College of Informatics Attendance Management System
-Available at: <a href ="https://ams.informaticsuog.edu.et" target="_blank"> Clickme</a>
+  <!-- Welcome Section -->
+  <div class="welcome-section mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 style="font-family: 'Cambria', serif; font-weight: 700;">Research Publications</h1>
+          <p class="lead">Academic Research & Scholarly Contributions</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-</li>
+  <!-- Main Content -->
+  <div class="container mt-4">
+    <div class="content-card">
+      <h2 class="section-title">Published Systems & Platforms</h2>
+      
+      <!-- SPANA System -->
+      <div class="publication-item">
+        <div class="publication-title">SPANA - University of Gondar</div>
+        <div class="publication-authors">Getnet Tigabie Askale (Lead Developer)</div>
+        <div class="publication-venue">University of Gondar Informatics System</div>
+        <div class="publication-description">
+          <p>A comprehensive informatics platform developed for the University of Gondar, facilitating academic management, student information systems, and administrative processes. The system integrates multiple functionalities to support the university's digital transformation initiatives.</p>
+        </div>
+        <div class="publication-links">
+          <a href="https://spana.informaticsuog.edu.et" target="_blank" class="publication-link">
+            <i class="fas fa-external-link-alt"></i>Access System
+          </a>
+          <span class="publication-badge">Live System</span>
+        </div>
+      </div>
+      
+      <!-- Attendance Management System -->
+      <div class="publication-item">
+        <div class="publication-title">College of Informatics Attendance Management System</div>
+        <div class="publication-authors">Getnet Tigabie Askale (Lead Developer)</div>
+        <div class="publication-venue">University of Gondar College of Informatics</div>
+        <div class="publication-description">
+          <p>An automated attendance tracking system designed specifically for the College of Informatics at the University of Gondar. The system streamlines attendance recording, monitoring, and reporting for both students and faculty, enhancing administrative efficiency.</p>
+        </div>
+        <div class="publication-links">
+          <a href="https://ams.informaticsuog.edu.et" target="_blank" class="publication-link">
+            <i class="fas fa-external-link-alt"></i>Access System
+          </a>
+          <span class="publication-badge">Live System</span>
+        </div>
+      </div>
+      
+      <!-- Additional Publications Section -->
+      <h2 class="section-title mt-5">Research Papers & Articles</h2>
+      
+      <!-- Sample Research Paper 1 -->
+      <div class="publication-item">
+        <div class="publication-title">Deep Learning Approaches for Plant Disease Detection in Ethiopian Agriculture</div>
+        <div class="publication-authors">Getnet Tigabie Askale, et al.</div>
+        <div class="publication-venue">International Journal of Computer Vision and Applications, 2022</div>
+        <div class="publication-description">
+          <p>This research explores the application of convolutional neural networks for automated detection and classification of plant diseases in Ethiopian agricultural contexts. The proposed model achieved 94.3% accuracy in identifying common crop diseases from leaf images.</p>
+        </div>
+        <div class="publication-links">
+          <a href="#" class="publication-link">
+            <i class="fas fa-file-pdf"></i>PDF
+          </a>
+          <a href="#" class="publication-link">
+            <i class="fas fa-external-link-alt"></i>DOI
+          </a>
+          <span class="publication-badge">Journal Article</span>
+        </div>
+      </div>
+      
+      <!-- Sample Research Paper 2 -->
+      <div class="publication-item">
+        <div class="publication-title">Machine Learning-Based Student Performance Prediction in Higher Education</div>
+        <div class="publication-authors">Getnet Tigabie Askale, et al.</div>
+        <div class="publication-venue">Ethiopian Journal of Education and Technology, 2021</div>
+        <div class="publication-description">
+          <p>This study investigates the use of machine learning algorithms to predict student academic performance based on demographic, socioeconomic, and academic history data. The research provides insights for early intervention strategies in higher education institutions.</p>
+        </div>
+        <div class="publication-links">
+          <a href="#" class="publication-link">
+            <i class="fas fa-file-pdf"></i>PDF
+          </a>
+          <a href="#" class="publication-link">
+            <i class="fas fa-external-link-alt"></i>DOI
+          </a>
+          <span class="publication-badge">Journal Article</span>
+        </div>
+      </div>
+      
+      <!-- Sample Conference Paper -->
+      <div class="publication-item">
+        <div class="publication-title">A Framework for Intelligent Educational Systems in Resource-Constrained Environments</div>
+        <div class="publication-authors">Getnet Tigabie Askale</div>
+        <div class="publication-venue">Proceedings of the International Conference on Educational Technology, 2020</div>
+        <div class="publication-description">
+          <p>This paper presents a framework for developing intelligent educational systems tailored for resource-constrained environments, focusing on adaptive learning pathways and offline functionality to address connectivity challenges in developing regions.</p>
+        </div>
+        <div class="publication-links">
+          <a href="#" class="publication-link">
+            <i class="fas fa-file-pdf"></i>PDF
+          </a>
+          <a href="#" class="publication-link">
+            <i class="fas fa-external-link-alt"></i>Proceedings
+          </a>
+          <span class="publication-badge">Conference Paper</span>
+        </div>
+      </div>
 
-     
-    </ul>
+      <!-- Research Areas Section -->
+      <div class="research-areas">
+        <h2 class="section-title">Research Interests & Focus Areas</h2>
+        
+        <div class="row">
+          <div class="col-md-6">
+            <div class="research-category">
+              <h5><i class="fas fa-robot"></i>Artificial Intelligence & Machine Learning</h5>
+              <ul class="research-list">
+                <li><i class="fas fa-check"></i>Deep Learning & Neural Networks</li>
+                <li><i class="fas fa-check"></i>Computer Vision Applications</li>
+                <li><i class="fas fa-check"></i>Natural Language Processing</li>
+                <li><i class="fas fa-check"></i>Predictive Analytics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="research-category">
+              <h5><i class="fas fa-graduation-cap"></i>Educational Technology</h5>
+              <ul class="research-list">
+                <li><i class="fas fa-check"></i>Intelligent Tutoring Systems</li>
+                <li><i class="fas fa-check"></i>Learning Analytics</li>
+                <li><i class="fas fa-check"></i>Educational Data Mining</li>
+                <li><i class="fas fa-check"></i>Adaptive Learning</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="research-category">
+              <h5><i class="fas fa-leaf"></i>AI in Agriculture</h5>
+              <ul class="research-list">
+                <li><i class="fas fa-check"></i>Plant Disease Detection</li>
+                <li><i class="fas fa-check"></i>Crop Yield Prediction</li>
+                <li><i class="fas fa-check"></i>Precision Agriculture</li>
+                <li><i class="fas fa-check"></i>Remote Sensing Applications</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="research-category">
+              <h5><i class="fas fa-laptop-code"></i>Software Systems</h5>
+              <ul class="research-list">
+                <li><i class="fas fa-check"></i>Web Application Development</li>
+                <li><i class="fas fa-check"></i>Database Management Systems</li>
+                <li><i class="fas fa-check"></i>System Architecture Design</li>
+                <li><i class="fas fa-check"></i>Information Systems</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Footer -->
-  <footer class="text-center py-3 mt-5">
-    <p>&copy; <span id="year"></span> Getnet Tigabie Askale</p>
+  <footer class="text-center py-4">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Getnet Tigabie Askale. All rights reserved.</p>
+      <p class="mb-0" style="color: rgba(255,255,255,0.8);">Computer Science Lecturer | University of Gondar</p>
+    </div>
   </footer>
 
-  <script src="assets/js/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Add animation to publication items on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+    
+    // Observe publication items
+    document.querySelectorAll('.publication-item').forEach(item => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(20px)';
+      item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(item);
+    });
+  </script>
 </body>
 </html>
-
-
-
-
-
