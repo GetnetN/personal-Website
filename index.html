@@ -201,30 +201,6 @@
       }
     }
   </style>
-  <script>
-// Clean URL - Hide full path
-document.addEventListener('DOMContentLoaded', function() {
-    // Get current path
-    const currentPath = window.location.pathname;
-    
-    // Define clean paths mapping
-    const cleanPaths = {
-        '/personal-Website/index.html': '/',
-        '/personal-Website/about.html': '/about',
-        '/personal-Website/education.html': '/education', 
-        '/personal-Website/teaching.html': '/teaching',
-        '/personal-Website/experience.html': '/experience',
-        '/personal-Website/publication.html': '/publications',
-        '/personal-Website/projects.html': '/projects'
-    };
-    
-    // Replace URL if it matches our mapping
-    if (cleanPaths[currentPath]) {
-        const newUrl = window.location.origin + cleanPaths[currentPath];
-        window.history.replaceState({}, document.title, newUrl);
-    }
-});
-</script>
   
 </head>
 <body>
@@ -355,6 +331,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </script>
 </body>
 </html>
+
 
 
 
