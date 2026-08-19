@@ -180,6 +180,24 @@
       transition: transform 0.3s ease;
     }
     
+
+    .simple-graph {
+      min-height: 320px;
+    }
+
+    .simple-graph canvas {
+      max-height: 260px;
+    }
+
+    .stats-card {
+      padding: 18px;
+      margin-bottom: 0;
+    }
+
+    .stats-number {
+      font-size: 2rem;
+    }
+
     .graph-container:hover {
       transform: translateY(-5px);
     }
@@ -292,6 +310,7 @@
           <li class="nav-item"><a class="nav-link" href="teaching.html"><i class="fas fa-chalkboard-teacher me-1"></i>Teaching</a></li>
           <li class="nav-item"><a class="nav-link" href="experience.html"><i class="fas fa-briefcase me-1"></i>Experience</a></li>
           <li class="nav-item"><a class="nav-link active" href="publication.html"><i class="fas fa-book me-1"></i>Publications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#analytics"><i class="fas fa-chart-line me-1"></i>Analytics</a></li>
           <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-project-diagram me-1"></i>Projects</a></li>
         </ul>
       </div>
@@ -312,112 +331,182 @@
 
 
     <!-- Publications List Section -->
-    <div class="content-card">
-      <h2 class="section-title">Journal Publications</h2>
-        
-      <!-- Publication 1 -->
-      <div class="publication-item" data-year="2024" data-category="Deep Learning" data-citations="18">
-        <div class="publication-title">Ensemble of Deep CNN Models for Human Skin Disease Classification</div>
-        <div class="publication-authors">Getnet Tigabie Askale</div>
-        <div class="publication-venue">International Journal of Imaging Systems and Technology, 2024</div>
-        <div class="publication-description">
-          <p>This research presents an ensemble approach using multiple deep convolutional neural network architectures for accurate classification of human skin diseases. The proposed method demonstrates improved performance compared to individual models.</p>
+    <div class="container">
+      <div class="content-card">
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-3">
+          <h2 class="section-title mb-0">Journal Publications</h2>
+          <div class="text-muted"><i class="fas fa-database me-1"></i><span id="publicationCount">6</span> publications listed</div>
         </div>
-        <div class="publication-links">
-          <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/ima.23121" target="_blank" class="publication-link">
-            <i class="fas fa-external-link-alt"></i>View Publication
-          </a>
-          <span class="publication-badge">Journal Article</span>
-         
+
+        <p class="analysis-description">
+          Complete publication record currently entered on this page. Use the filters to explore publications by year or research area.
+        </p>
+
+        <!-- Filters -->
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All Publications</button>
+          <button class="filter-btn" data-filter="2024">2024</button>
+          <button class="filter-btn" data-filter="2025">2025</button>
+          <button class="filter-btn" data-filter="2026">2026</button>
+          <button class="filter-btn" data-filter="Medical AI">Medical AI</button>
+          <button class="filter-btn" data-filter="Agriculture AI">Agriculture AI</button>
+          <button class="filter-btn" data-filter="Deep Learning">Deep Learning</button>
         </div>
-      </div>
-      
-      <!-- Publication 2 -->
-      <div class="publication-item" data-year="2025" data-category="Agriculture AI" data-citations="12">
-        <div class="publication-title">Mobile based deep CNN model for maize leaf disease detection and classification</div>
-        <div class="publication-authors">Getnet Tigabie Askale</div>
-        <div class="publication-venue">Plant Methods, 2025</div>
-        <div class="publication-description">
-          <p>This study develops a mobile-compatible deep convolutional neural network model for efficient detection and classification of maize leaf diseases. The solution enables farmers to identify crop diseases using smartphone cameras for timely intervention.</p>
+
+        <div id="noResults" class="alert alert-info text-center d-none">
+          No publications match the selected filter.
         </div>
-        <div class="publication-links">
-          <a href="https://plantmethods.biomedcentral.com/articles/10.1186/s13007-025-01386-5" target="_blank" class="publication-link">
-            <i class="fas fa-external-link-alt"></i>View Publication
-          </a>
-          <span class="publication-badge">Journal Article</span>
-       
-        </div>
+
+        <!-- Publication 1 -->
+        <article class="publication-item" data-year="2024" data-category="Deep Learning">
+          <div class="publication-title">Ensemble of Deep CNN Models for Human Skin Disease Classification</div>
+          <div class="publication-authors">Getnet Tigabie Askale</div>
+          <div class="publication-venue">International Journal of Imaging Systems and Technology, 2024</div>
+          <div class="publication-description">
+            <p>This research presents an ensemble approach using multiple deep convolutional neural network architectures for accurate classification of human skin diseases. The proposed method demonstrates improved performance compared to individual models.</p>
+          </div>
+          <div class="publication-links">
+            <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/ima.23121" target="_blank" rel="noopener noreferrer" class="publication-link">
+              <i class="fas fa-external-link-alt"></i>View Publication
+            </a>
+            <span class="publication-badge">Journal Article</span>
+          </div>
+        </article>
+
+        <!-- Publication 2 -->
+        <article class="publication-item" data-year="2025" data-category="Agriculture AI">
+          <div class="publication-title">Mobile based deep CNN model for maize leaf disease detection and classification</div>
+          <div class="publication-authors">Getnet Tigabie Askale</div>
+          <div class="publication-venue">Plant Methods, 2025</div>
+          <div class="publication-description">
+            <p>This study develops a mobile-compatible deep convolutional neural network model for efficient detection and classification of maize leaf diseases. The solution enables farmers to identify crop diseases using smartphone cameras for timely intervention.</p>
+          </div>
+          <div class="publication-links">
+            <a href="https://plantmethods.biomedcentral.com/articles/10.1186/s13007-025-01386-5" target="_blank" rel="noopener noreferrer" class="publication-link">
+              <i class="fas fa-external-link-alt"></i>View Publication
+            </a>
+            <span class="publication-badge">Journal Article</span>
+          </div>
+        </article>
+
+        <!-- Publication 3 -->
+        <article class="publication-item" data-year="2025" data-category="Medical AI">
+          <div class="publication-title">Enhancing Melanoma Skin Cancer Detection and Classification UNet Segmentation and Feature Fusion of Deep Learning Algorithms</div>
+          <div class="publication-authors">Getnet Tigabie Askale</div>
+          <div class="publication-venue">International Journal of Multidisciplinary Research and Explorer, 2025</div>
+          <div class="publication-description">
+            <p>This study proposes a novel approach combining the feature extraction capability of the VGG16 and ResNet-50 deep learning algorithms with the precise segmentation power of the U-Net architecture.</p>
+          </div>
+          <div class="publication-links">
+            <a href="https://ijmre.com/index.php/IJMRE/article/view/209" target="_blank" rel="noopener noreferrer" class="publication-link">
+              <i class="fas fa-external-link-alt"></i>View Publication
+            </a>
+            <span class="publication-badge">Journal Article</span>
+          </div>
+        </article>
+
+        <!-- Publication 4 -->
+        <article class="publication-item" data-year="2026" data-category="Medical AI">
+          <div class="publication-title">A Customized MobileNetV2-Based Lightweight CNN for Monkeypox Detection and Classification</div>
+          <div class="publication-authors">Getnet Tigabie Askale</div>
+          <div class="publication-venue">Scientific Reports, 2026</div>
+          <div class="publication-description">
+            <p>This study introduces a customized MobileNetV2 lightweight model for the early detection of Mpox, delivering strong detection performance while maintaining computational efficiency.</p>
+          </div>
+          <div class="publication-links">
+            <a href="https://www.nature.com/articles/s41598-026-35871-1" target="_blank" rel="noopener noreferrer" class="publication-link">
+              <i class="fas fa-external-link-alt"></i>View Publication
+            </a>
+            <span class="publication-badge">Journal Article</span>
+          </div>
+        </article>
+
+        <!-- Publication 5 -->
+        <article class="publication-item" data-year="2026" data-category="Natural Language Processing">
+          <div class="publication-title">Design and Development of Amharic Chatbot for Mental Health Using Bidirectional Long Short-Term Memory</div>
+          <div class="publication-authors">Getnet Tigabie Askale</div>
+          <div class="publication-venue">Cureus Journal of Computer Science, 2026</div>
+          <div class="publication-description">
+            <p>This study proposes a deep learning-based Amharic chatbot designed to provide accessible, culturally sensitive, and stigma-free support in low-resource settings.</p>
+          </div>
+          <div class="publication-links">
+            <a href="https://doi.org/10.7759/s44389-026-00034-2" target="_blank" rel="noopener noreferrer" class="publication-link">
+              <i class="fas fa-external-link-alt"></i>View Publication
+            </a>
+            <span class="publication-badge">Journal Article</span>
+          </div>
+        </article>
+
+        <!-- Publication 6 -->
+        <article class="publication-item" data-year="2026" data-category="Agriculture AI">
+          <div class="publication-title">An attention-enhanced MobileNetV2 with squeeze-and-excitation architecture for efficient potato leaf disease detection and classification</div>
+          <div class="publication-authors">Getnet Tigabie Askale</div>
+          <div class="publication-venue">Scientific Reports, 2026</div>
+          <div class="publication-description">
+            <p>This study presents an attention-enhanced lightweight deep learning approach for efficient potato leaf disease detection and classification.</p>
+          </div>
+          <div class="publication-links">
+            <a href="https://www.nature.com/articles/s41598-026-60778-2" target="_blank" rel="noopener noreferrer" class="publication-link">
+              <i class="fas fa-external-link-alt"></i>View Publication
+            </a>
+            <span class="publication-badge">Journal Article</span>
+          </div>
+        </article>
       </div>
 
-      <!-- Publication 3 -->
-      <div class="publication-item" data-year="2025" data-category="Medical AI" data-citations="8">
-        <div class="publication-title">Enhancing Melanoma Skin Cancer Detection and Classification UNet Segmentation and Feature Fusion of Deep Learning Algorithms</div>
-        <div class="publication-authors">Getnet Tigabie Askale</div>
-        <div class="publication-venue">International Journal of Multidisciplinary Research and Explorer, 2025</div>
-        <div class="publication-description">
-          <p> This study proposes a novel approach combining the feature extraction capability of the VGG16 and ResNet-50 deep learning algorithms with the precise segmentation power of the U-Net architecture.</p>
-        </div>
-        <div class="publication-links">
-          <a href="https://ijmre.com/index.php/IJMRE/article/view/209" target="_blank" class="publication-link">
-            <i class="fas fa-external-link-alt"></i>View Publication
-          </a>
-          <span class="publication-badge">Journal Article</span>
-         
-        </div>
-      </div>
+      <!-- Simple Research Analytics -->
+      <div class="content-card" id="analytics">
+        <h2 class="section-title">Research Analytics</h2>
+        <p class="analysis-description">
+          A simple overview of publication output and research focus.
+        </p>
 
-      <!-- Publication 4 -->
-      <div class="publication-item" data-year="2025" data-category="Medical AI" data-citations="5">
-        <div class="publication-title">A Customized MobileNetV2-Based Lightweight CNN for Monkeypox Detection and Classification</div>
-        <div class="publication-authors">Getnet Tigabie Askale</div>
-        <div class="publication-venue">Scientific Reports, 2026</div>
-        <div class="publication-description">
-          <p> This study introduces a customized MobileNetV2 (CMBNV2) lightweight model for the early detection of Mpox, which delivers excellent detection performance while maintaining efficiency.</p>
+        <div class="row g-3 mb-4">
+          <div class="col-6 col-md-3">
+            <div class="stats-card">
+              <div class="stats-number" id="totalPubs">0</div>
+              <div class="stats-label">Publications</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stats-card">
+              <div class="stats-number" id="pubs2026">0</div>
+              <div class="stats-label">In 2026</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stats-card">
+              <div class="stats-number" id="researchAreas">0</div>
+              <div class="stats-label">Research Areas</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stats-card">
+              <div class="stats-number" id="journals">0</div>
+              <div class="stats-label">Venues</div>
+            </div>
+          </div>
         </div>
-        <div class="publication-links">
-          <a href="https://www.nature.com/articles/s41598-026-35871-1" target="_blank" class="publication-link">
-            <i class="fas fa-external-link-alt"></i>View Publication
-          </a>
-          <span class="publication-badge">Journal Article</span>
-        
-        </div>
-      </div>
 
-       <!-- Publication 5 -->
-      <div class="publication-item" data-year="2025" data-category="Medical AI" data-citations="5">
-        <div class="publication-title">Design and Development of Amharic Chatbot for Mental Health Using Bidirectional Long Short-Term Memory</div>
-        <div class="publication-authors">Getnet Tigabie Askale</div>
-        <div class="publication-venue">Cureus Journal of Computer Science, 2026</div>
-        <div class="publication-description">
-          <p> This study proposes a deep learning-based Amharic mental health chatbot designed to provide accessible, culturally sensitive, and stigma-free support for individuals experiencing depression and anxiety in low-resource settings.</p>
-        </div>
-        <div class="publication-links">
-          <a href="https://doi.org/10.7759/s44389-026-00034-2" target="_blank" class="publication-link">
-            <i class="fas fa-external-link-alt"></i>View Publication
-          </a>
-          <span class="publication-badge">Journal Article</span>
-        
-        </div>
-      <!-- </div> -->
+        <div class="row g-4">
+          <div class="col-lg-7">
+            <div class="graph-container simple-graph">
+              <div class="graph-title">Publications by Year</div>
+              <canvas id="yearChart"></canvas>
+            </div>
+          </div>
 
-       <!-- Publication 6 -->
-      <div class="publication-item" data-year="2025" data-category="Medical AI" data-citations="5"> 
-        <div class="publication-title">An attention-enhanced MobileNetV2 with squeeze-and-excitation architecture for efficient potato leaf disease detection and classification</div>
-        <div class="publication-authors">Getnet Tigabie Askale</div>
-        <div class="publication-venue">Scientific Reports, 2026</div>
-        <div class="publication-description">
+          <div class="col-lg-5">
+            <div class="graph-container simple-graph">
+              <div class="graph-title">Research Areas</div>
+              <canvas id="areaChart"></canvas>
+            </div>
+          </div>
         </div>
-        </div>
-        <div class="publication-links">
-          <a href="https://www.nature.com/articles/s41598-026-60778-2" target="_blank" class="publication-link">
-            <i class="fas fa-external-link-alt"></i>View Publication
-          </a>
-          <span class="publication-badge">Journal Article</span>
-        
-        </div>
+
+        <div class="mt-4 text-center text-muted small" id="insightsText"></div>
       </div>
-      
-     
+    </div>
 
   <!-- Footer -->
   <footer class="text-center py-4">
@@ -429,242 +518,118 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Set current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-    
-    // Add animation to publication items on scroll
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, observerOptions);
-    
-    // Observe publication items
-    document.querySelectorAll('.publication-item').forEach(item => {
-      item.style.opacity = '0';
-      item.style.transform = 'translateY(20px)';
-      item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(item);
-    });
-    
-    // Graph Analysis Code
-    document.addEventListener('DOMContentLoaded', function() {
-      // Initialize charts
-      initCharts();
-      
-      // Set active button styling
+    document.addEventListener('DOMContentLoaded', function () {
+      const publications = [...document.querySelectorAll('.publication-item')];
+
+      // Simple publication filters
       document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
           document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
           this.classList.add('active');
+
+          const filter = this.dataset.filter;
+
+          publications.forEach(item => {
+            const year = item.dataset.year || '';
+            const category = item.dataset.category || '';
+            const show =
+              filter === 'all' ||
+              filter === year ||
+              category.toLowerCase() === filter.toLowerCase();
+
+            item.style.display = show ? '' : 'none';
+          });
         });
       });
-    });
-    
-    // Chart variables
-    let mainChart, secondaryChart, focusChart, impactChart;
-    
-    function initCharts() {
-      const ctx1 = document.getElementById('mainChart').getContext('2d');
-      const ctx2 = document.getElementById('secondaryChart').getContext('2d');
-      const ctx3 = document.getElementById('focusChart').getContext('2d');
-      const ctx4 = document.getElementById('impactChart').getContext('2d');
-      
-      // Color palette for charts
-      const chartColors = {
-        primary: '#3498db',
-        secondary: '#2ecc71',
-        accent: '#e74c3c',
-        lightBlue: '#5dade2',
-        lightGreen: '#58d68d',
-        lightRed: '#ec7063',
-        purple: '#9b59b6',
-        yellow: '#f1c40f'
+
+      // Read publication data directly from the publication cards
+      const years = publications.map(p => p.dataset.year);
+      const categories = publications.map(p => p.dataset.category);
+
+      const yearCounts = {};
+      years.forEach(y => yearCounts[y] = (yearCounts[y] || 0) + 1);
+
+      const categoryCounts = {};
+      categories.forEach(c => categoryCounts[c] = (categoryCounts[c] || 0) + 1);
+
+      const sortedYears = Object.keys(yearCounts).sort();
+      const total = publications.length;
+      const areas = Object.keys(categoryCounts).length;
+      const venues = new Set(
+        publications.map(p => {
+          const v = p.querySelector('.publication-venue');
+          return v ? v.textContent.split(',')[0].trim() : '';
+        })
+      );
+
+      // KPI numbers
+      document.getElementById('publicationCount').textContent = total;
+      document.getElementById('totalPubs').textContent = total;
+      document.getElementById('pubs2026').textContent = yearCounts['2026'] || 0;
+      document.getElementById('researchAreas').textContent = areas;
+      document.getElementById('journals').textContent = venues.size;
+
+      // Lightweight chart defaults
+      const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false }
+        }
       };
-      
-      // Main chart (Yearly Trends)
-      mainChart = new Chart(ctx1, {
-        type: 'line',
-        data: {
-          labels: ['2020', '2021', '2022', '2023', '2024', '2025'],
-          datasets: [{
-            label: 'Publications per Year',
-            data: [0, 1, 1, 2, 1, 4],
-            borderColor: chartColors.primary,
-            backgroundColor: 'rgba(52, 152, 219, 0.1)',
-            borderWidth: 3,
-            fill: true,
-            tension: 0.4
-          }, {
-            label: 'Cumulative Publications',
-            data: [0, 1, 2, 4, 5, 9],
-            borderColor: chartColors.accent,
-            backgroundColor: 'rgba(231, 76, 60, 0.1)',
-            borderWidth: 3,
-            fill: true,
-            tension: 0.4,
-            borderDash: [5, 5]
-          }]
-        },
-        options: {
-          responsive: true,
-          plugins: {
-            legend: {
-              position: 'top',
-            },
-            tooltip: {
-              mode: 'index',
-              intersect: false
-            }
-          },
-          scales: {
-            y: {
-              beginAtZero: true,
-              title: {
-                display: true,
-                text: 'Number of Publications'
-              }
-            },
-            x: {
-              title: {
-                display: true,
-                text: 'Year'
-              }
-            }
-          }
-        }
-      });
-      
-      // Secondary chart (Publication Types)
-      secondaryChart = new Chart(ctx2, {
-        type: 'doughnut',
-        data: {
-          labels: ['Journal Articles', 'Conference Papers', 'Book Chapters', 'Preprints'],
-          datasets: [{
-            data: [5, 2, 1, 1],
-            backgroundColor: [
-              chartColors.primary,
-              chartColors.secondary,
-              chartColors.accent,
-              chartColors.purple
-            ],
-            borderWidth: 2,
-            borderColor: '#fff'
-          }]
-        },
-        options: {
-          responsive: true,
-          plugins: {
-            legend: {
-              position: 'bottom'
-            }
-          }
-        }
-      });
-      
-      // Focus chart (Research Areas)
-      focusChart = new Chart(ctx3, {
+
+      // Publications by year
+      new Chart(document.getElementById('yearChart'), {
         type: 'bar',
         data: {
-          labels: ['Medical AI', 'Agriculture AI', 'Deep Learning', 'Computer Vision', 'Mobile AI'],
+          labels: sortedYears,
           datasets: [{
-            label: 'Number of Publications',
-            data: [3, 2, 3, 4, 2],
-            backgroundColor: [
-              chartColors.accent,
-              chartColors.secondary,
-              chartColors.primary,
-              chartColors.purple,
-              chartColors.yellow
-            ],
-            borderColor: '#fff',
+            label: 'Publications',
+            data: sortedYears.map(y => yearCounts[y]),
             borderWidth: 1
           }]
         },
         options: {
-          responsive: true,
+          ...chartOptions,
           scales: {
             y: {
               beginAtZero: true,
-              ticks: {
-                stepSize: 1
-              }
+              ticks: { stepSize: 1 }
             }
           }
         }
       });
-      
-      // Impact chart (Citations)
-      impactChart = new Chart(ctx4, {
-        type: 'radar',
+
+      // Research areas
+      new Chart(document.getElementById('areaChart'), {
+        type: 'doughnut',
         data: {
-          labels: ['Citations', 'Journal Impact', 'Collaborations', 'Innovation', 'Practical Application'],
+          labels: Object.keys(categoryCounts),
           datasets: [{
-            label: 'Publication Impact Metrics',
-            data: [70, 85, 65, 90, 80],
-            backgroundColor: 'rgba(52, 152, 219, 0.2)',
-            borderColor: chartColors.primary,
-            pointBackgroundColor: chartColors.primary,
-            pointBorderColor: '#fff',
-            pointHoverBackgroundColor: '#fff',
-            pointHoverBorderColor: chartColors.primary
+            data: Object.values(categoryCounts),
+            borderWidth: 1
           }]
         },
         options: {
-          responsive: true,
-          scales: {
-            r: {
-              angleLines: {
-                display: true
-              },
-              suggestedMin: 0,
-              suggestedMax: 100
+          ...chartOptions,
+          plugins: {
+            legend: {
+              display: true,
+              position: 'bottom'
             }
-          }
+          },
+          cutout: '60%'
         }
       });
-    }
-    
-    // Function to change graph display based on filter
-    function changeGraph(graphType) {
-      // Update main chart based on selection
-      if (graphType === 'yearly') {
-        mainChart.data.datasets[0].label = 'Publications per Year';
-        mainChart.data.datasets[0].data = [0, 1, 1, 2, 1, 4];
-        mainChart.data.datasets[1].label = 'Cumulative Publications';
-        mainChart.data.datasets[1].data = [0, 1, 2, 4, 5, 9];
-        mainChart.update();
-      } 
-      else if (graphType === 'categories') {
-        mainChart.data.datasets[0].label = 'Medical AI Publications';
-        mainChart.data.datasets[0].data = [0, 0, 1, 1, 1, 2];
-        mainChart.data.datasets[1].label = 'Agriculture AI Publications';
-        mainChart.data.datasets[1].data = [0, 0, 0, 0, 0, 2];
-        mainChart.update();
-      }
-      else if (graphType === 'citation') {
-        mainChart.data.datasets[0].label = 'Citations per Year';
-        mainChart.data.datasets[0].data = [0, 5, 10, 25, 18, 25];
-        mainChart.data.datasets[1].label = 'Average Citations';
-        mainChart.data.datasets[1].data = [0, 5, 7.5, 12, 14, 16];
-        mainChart.update();
-      }
-      else if (graphType === 'collaboration') {
-        mainChart.data.datasets[0].label = 'Single-Author Papers';
-        mainChart.data.datasets[0].data = [0, 1, 1, 1, 1, 2];
-        mainChart.data.datasets[1].label = 'Collaborative Papers';
-        mainChart.data.datasets[1].data = [0, 0, 0, 1, 0, 2];
-        mainChart.update();
-      }
-    }
+
+      // One-line summary
+      const latestYear = sortedYears[sortedYears.length - 1];
+      document.getElementById('insightsText').textContent =
+        `${total} publications across ${areas} research areas, with ${yearCounts[latestYear]} publication${yearCounts[latestYear] == 1 ? '' : 's'} in ${latestYear}.`;
+
+      // Footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
   </script>
 </body>
 </html>
